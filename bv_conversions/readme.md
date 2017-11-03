@@ -1,4 +1,4 @@
-# Glasser et al. 2016 cifti, gifti to BrainVoyager conversions steps
+# Glasser et al. 2016 cifti, gifti to BrainVoyager formats conversions
 
 __Beware!__ work in progress...
 
