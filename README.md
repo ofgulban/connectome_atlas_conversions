@@ -1,5 +1,5 @@
 # Connectome conversions
-Various Nifti, Cifti conversions.
+Various Nifti, Cifti, Gifti conversions.
 
 __Beware!__ Work in progress...
 
