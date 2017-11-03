@@ -1,4 +1,4 @@
-# Glasser et al. 2016 atlas conversions processing steps
+# Glasser et al. 2016 cifti, gifti conversions processing steps
 
 __Beware!__ work in progress...
 
