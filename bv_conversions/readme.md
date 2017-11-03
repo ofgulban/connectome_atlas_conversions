@@ -1,5 +1,7 @@
 # Glasser et al. 2016 atlas conversions processing steps
 
+__Beware!__ work in progress...
+
 ## Convert surfaces to BV surface format:
 
 1. run ```gifti_surf_to_mat.py```
