@@ -5,8 +5,8 @@ Dependencies
 1- connectome_borders_xml_to_mat.py should be run beforehand.
 2- Neuroelf should be added to Matlab path. Source: http://neuroelf.net/,
 tested version: 1.0
-3- 'cifti-matlab' library sould be added to Matlab path. Source: 
-https://github.com/Washington-University/cifti-matlab, tested version: 
+3- 'cifti-matlab' library sould be added to Matlab path. Source:
+https://github.com/Washington-University/cifti-matlab, tested version:
 Apr 16, 2016.
 4- Resulting file can be loaded to BrainVoyager with SRF files as pathes of
 interest (POI) file.
@@ -14,12 +14,12 @@ interest (POI) file.
 clear all;
 
 % Can load separate or both hemisphere .dlabels.nii
-fname_labels='/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.L.CorticalAreas_dil_Colors.32k_fs_LR.dlabel.nii';
+fname_labels='/path/to/Q1-Q6_RelatedParcellation210.L.CorticalAreas_dil_Colors.32k_fs_LR.dlabel.nii';
 lab = ft_read_cifti(fname_labels);
 
 % Load corresponding extracted label descriptions. (Caution!) Make sure to
 % have extracted labels in the same order as label indices.
-mat_fname = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.L.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_POI_labels.mat';
+mat_fname = '/path/to/Q1-Q6_RelatedParcellation210.L.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR_POI_labels.mat';
 label_desc = load(mat_fname);
 
 % Derive some parameters

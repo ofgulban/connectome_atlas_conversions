@@ -1,5 +1,5 @@
 % CIFTI2 dscalar conversion to BrainVoyager SMP files step 2.
-%{ 
+%{
 Dependencies
 ------------
 1- cifti2_dscalar_to_mat.py needs to be run on beforehand.
@@ -10,12 +10,12 @@ corresponding surface (SRF) as a surface map (SMP).
 %}
 clear all;
 
-% Load scalar maps of both hemispheres (vertex corresponce is lost) 
-fname_scalars='/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/scalars.mat';
+% Load scalar maps of both hemispheres (vertex corresponce is lost)
+fname_scalars='/path/to/scalars.mat';
 sca = load(fname_scalars);
 
 % Load both hemisphere labels file to recover vertex correspondence
-fname_labels='/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR.dlabel.nii';
+fname_labels='/path/to/Q1-Q6_RelatedParcellation210.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR.dlabel.nii';
 lab = ft_read_cifti(fname_labels);
 
 % Derive some parameters
@@ -27,7 +27,7 @@ idx_brainstructures = unique(lab.brainstructure)';
 % Loop through hemispheres
 vert_idx_offset = 1;
 for i=idx_brainstructures
-    
+
     % Get relevant brain structure vertices
     idx_str = lab.brainstructure == i;
     % Get a vertex mask
@@ -39,7 +39,7 @@ for i=idx_brainstructures
     % Create a default smp
     smp = xff('SMP');
     smp.NrOfVertices = nr_verts;
-    
+
     % Loop through extracted scalar maps
     for j = 1:numel(fields)
         map = sca.(fields{j});
@@ -55,16 +55,15 @@ for i=idx_brainstructures
             smp.Map(j+1) = smp.Map(j);
         end
     end
-    
+
     % Save smp file
     smp.NrOfMaps = size(smp.Map, 1);
     identifier = lab.brainstructurelabel{i};
     out_name = fullfile(path, [name '_' identifier '.smp']);
     smp.SaveAs(out_name);
-    
+
     % Adjust vertex offset for the next hemisphere
     vert_idx_offset = vert_idx_offset + nr_used_verts;
 end
 
 disp('Finished.')
-

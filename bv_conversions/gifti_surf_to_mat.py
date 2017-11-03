@@ -5,7 +5,7 @@ import numpy as np
 from nibabel import load
 from scipy.io import savemat
 
-fname_gifti = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.L.midthickness_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.surf.gii'
+fname_gifti = '/path/to/Q1-Q6_RelatedParcellation210.L.midthickness_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.surf.gii'
 gii = load(fname_gifti)
 basename = os.path.basename(fname_gifti).split('.')[0:-2]
 basename = '.'.join(basename)
@@ -26,6 +26,10 @@ def compute_vertex_normals(verts, faces):
     -------
     normals: 2d numpy array, shape [nvertices, 3]
     Unit vector vertex normals.
+
+    Reference
+    ---------
+    https://sites.google.com/site/dlampetest/python/calculating-normals-of-a-triangle-mesh-using-numpy
 
     """
     def normalize_v3(arr):

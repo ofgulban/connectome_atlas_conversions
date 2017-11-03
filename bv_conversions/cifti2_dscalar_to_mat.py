@@ -15,12 +15,12 @@ to Brainvoyager SMP's by borrowing information form dlabel.nii files in Matlab.
 from scipy.io import savemat
 from nibabel.cifti2 import load
 
-fname_myel = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.MyelinMap_BC_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.dscalar.nii'
-fname_curv = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.curvature_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.dscalar.nii'
-fname_thic = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.corrThickness_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.dscalar.nii'
+fname_myel = '/path/to/Q1-Q6_RelatedParcellation210.MyelinMap_BC_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.dscalar.nii'
+fname_curv = '/path/to/Q1-Q6_RelatedParcellation210.curvature_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.dscalar.nii'
+fname_thic = '/path/to/Q1-Q6_RelatedParcellation210.corrThickness_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.dscalar.nii'
 
 # Enter the name for the output mat file
-fname_out = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/scalars.mat'
+fname_out = '/path/to/scalars.mat'
 
 # load cifti images (not reading correctly but good enough to extract maps)
 myel = load(fname_myel)

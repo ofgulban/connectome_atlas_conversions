@@ -1,5 +1,5 @@
 % Gifti surface to BrainVoyager SRF format conversion step 2.
-%{ 
+%{
 Dependencies
 ------------
 1- gifti_surf_to_mat.py needs to be run on the gifti surface file
@@ -12,7 +12,7 @@ tested version: 1.0
 clear all;
 
 % Load extracted gifti mesh mat file
-fname_giftimat = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.L.midthickness_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.mat';
+fname_giftimat = '/path/to/Q1-Q6_RelatedParcellation210.L.midthickness_MSMAll_2_d41_WRN_DeDrift.32k_fs_LR.mat';
 gmat = load(fname_giftimat);
 
 % Derived parameters
@@ -47,7 +47,7 @@ srf.TriangleVertex = double(faces);
 
 % Correct neighbours field is required for shading, otherwise you will see
 % random black patches etc.
-srf = srf.UpdateNeighbors; 
+srf = srf.UpdateNeighbors;
 
 % Save
 fname_out = fullfile(path, [name '.srf']);

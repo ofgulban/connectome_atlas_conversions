@@ -4,7 +4,7 @@ import os
 import xml.etree.ElementTree as ET
 from scipy.io import savemat
 
-fname_xml = '/media/Data_Drive/ISILON/600_ATLASES/vanessen/test/Q1-Q6_RelatedParcellation210.L.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR.border'
+fname_xml = '/path/to/Q1-Q6_RelatedParcellation210.L.CorticalAreas_dil_Final_Final_Areas_Group_Colors.32k_fs_LR.border'
 basename = os.path.basename(fname_xml).split('.')[0:-1]
 basename = '.'.join(basename)
 dirname = os.path.dirname(fname_xml)
